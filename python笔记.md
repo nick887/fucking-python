@@ -1,27 +1,27 @@
 # python笔记
 ## 0. ZEN OF PYTHON
->Beautiful is better than ugly.
->Explicit is better than implicit.
->Simple is better than complex.
->Complex is better than complicated.
->Flat is better than nested.
->Sparse is better than dense.
->Readability counts.
->Special cases aren't special enough to break the rules.
->Although practicality beats purity.
->Errors should never pass silently.
->Unless explicitly silenced.
->In the face of ambiguity, refuse the temptation to guess.
->There should be one-- and preferably only one --obvious way to do it.
->Although that way may not be obvious at first unless you're Dutch.
->Now is better than never.
->Although never is often better than *right* now.
->If the implementation is hard to explain, it's a bad idea.
->If the implementation is easy to explain, it may be a good idea.
->Namespaces are one honking great idea -- let's do more of those
+>Beautiful is better than ugly.  
+>Explicit is better than implicit.  
+>Simple is better than complex.  
+>Complex is better than complicated.  
+>Flat is better than nested.  
+>Sparse is better than dense.  
+>Readability counts.  
+>Special cases aren't special enough to break the rules.  
+>Although practicality beats purity.  
+>Errors should never pass silently.  
+>Unless explicitly silenced.  
+>In the face of ambiguity, refuse the temptation to guess.  
+>There should be one-- and preferably only one --obvious way to do it.  
+>Although that way may not be obvious at first unless you're Dutch.  
+>Now is better than never.  
+>Although never is often better than *right* now.  
+>If the implementation is hard to explain, it's a bad idea.  
+>If the implementation is easy to explain, it may be a good idea.  
+>Namespaces are one honking great idea -- let's do more of those  
+ 
 
-
-## 数据类型
+## 1 数据类型
 ### 1.0字符串处理
 * 删除空白
 > ``` string.rstrip() ```去除右边空白
@@ -81,5 +81,13 @@
 > a=b[:]//注意不可以使用a=b,a=b相当于给b一个别名a，未申请新的空间储存b的复制
 > ```
 ### 1.3 元组
-* 
+* 元组定义
+> ```python
+>  a= (object1,object2,object3,...)
+> ```
+> 元组的访问```a[index]```
+* 元组赋值
+> 元组中的元素不可被赋值，例```a[0]=250```
+> 元组可以被赋值，例```a=(250,250)```
+
 
