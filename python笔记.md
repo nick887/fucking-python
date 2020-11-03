@@ -1,24 +1,24 @@
 # python笔记
 ## 0. ZEN OF PYTHON
 >Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-Special cases aren't special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you're Dutch.
-Now is better than never.
-Although never is often better than *right* now.
-If the implementation is hard to explain, it's a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let's do more of those
+>Explicit is better than implicit.
+>Simple is better than complex.
+>Complex is better than complicated.
+>Flat is better than nested.
+>Sparse is better than dense.
+>Readability counts.
+>Special cases aren't special enough to break the rules.
+>Although practicality beats purity.
+>Errors should never pass silently.
+>Unless explicitly silenced.
+>In the face of ambiguity, refuse the temptation to guess.
+>There should be one-- and preferably only one --obvious way to do it.
+>Although that way may not be obvious at first unless you're Dutch.
+>Now is better than never.
+>Although never is often better than *right* now.
+>If the implementation is hard to explain, it's a bad idea.
+>If the implementation is easy to explain, it may be a good idea.
+>Namespaces are one honking great idea -- let's do more of those
 
 
 ## 数据类型
@@ -59,3 +59,27 @@ Namespaces are one honking great idea -- let's do more of those
 > ```for item in list```
 * 函数range()
 > ```for i in range(i,j,x)```range为一个从i到j-1，步长为x，数字组成的列表
+* 列表统计计算
+> ```python
+> max(list)//列表最大值
+> min(list)//列表最小值
+> sum(list)//列表和
+> ```
+* 列表解析
+> 一种方便的构造列表的方法
+> ```a=[value** for i value in range(1,10)]```
+> 使代码更加简洁
+* 列表切片
+> ```python
+> list[x:]//下标为x-1元素至末尾元素
+> list[:x]//开头至下标为x-1元素
+> list[x,y]//下标为x-1至y-1元素
+> //x,y可以为负数
+> ```
+* 列表复制
+> ```python
+> a=b[:]//注意不可以使用a=b,a=b相当于给b一个别名a，未申请新的空间储存b的复制
+> ```
+### 1.3 元组
+* 
+
