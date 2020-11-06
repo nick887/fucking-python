@@ -19,7 +19,7 @@
 >If the implementation is hard to explain, it's a bad idea.  
 >If the implementation is easy to explain, it may be a good idea.  
 >Namespaces are one honking great idea -- let's do more of those  
- 
+
 
 ## 1 数据类型
 ### 1.0字符串处理
@@ -90,4 +90,207 @@
 > 元组中的元素不可被赋值，例```a[0]=250```
 > 元组可以被赋值，例```a=(250,250)```
 
+## 2 控制语句
+### 2.0 if语句
+* if语句格式
+	* if结构
+	```python
+	if condition :
+	...
+	```
+	* if-else结构
+	```python
+	if condition :
+	....
+	else :
+	.....
+	```
+	* if-elif-else结构
+	```python
+	if condition :
+	....
+	elif condition1:
+	.....
+	elif condition2:
+	......
+	.....
+	```
+* if 语句检查多个条件
+	* 与条件
+	> ``` python
+	> if condition1 and condition2 :
+	> ..........
+	> ```
+	* 或条件
+	> ``` python
+	> if condition1 or condition2 :
+	> ..........
+	> ```
+* 关键字 in
+> in 判断元素是否在列表中
+> ``` python
+> if item in list ://在列表中
+> ...........
+> if item not in list://不在列表中
+> .................
+> ```
 
+## 3 字典
+* 字典的书写
+字典中的基本元素由键值对组成，形式如下：
+``` python
+a={'x':'value1','y'='value2',....}
+```
+ * 访问字典
+类似与访问列表，下标改为键值
+```python
+a['x']
+```
+* 增加键值对
+通过赋值语句可以实现增加，若字典中存在则改变值  
+不存在则增加此键值对
+```python
+a['x']=b
+```
+* 删除键值对
+```python
+del a['x']//删除键为'x'的键值对
+```
+* 遍历字典
+  * 遍历字典元素
+  ```python
+  for i,j in a.items()//i为键，j为值
+  ```
+  * 遍历字典键
+  ```python
+  for i in a.keys()//注意此时的遍历以及将键值sorted
+  ```
+  * 遍历字典值
+  ```python
+  for i in a.values()
+  ```
+  * set()函数
+  当列表中的值重复的较多，而我们不需要这样的重复的无效数据时可以使用set(list)函数  
+  此函数通过列表输入生成一个集合类型，集合与列表类似，不同在于集合不含有重复元素
+  ```python
+  for i in set(a.values())
+  ```
+  * 嵌套字典
+   * 列表嵌套字典
+     ```python
+     [{},{},{},...]
+     ```
+   * 字典嵌套列表
+     ```python
+     {
+     a:[x,y,z,...],
+     ...........
+     }
+     ```
+   * 字典中有字典
+     ```python
+     {{},{},{},....}
+     ```
+
+
+## 3 交互输入与while
+### 3.0 函数input()
+>```a=input(string)//其中string为提示语不赋值给a```
+>a为字符串类型值
+### 3.1 函数int()
+>```a=int(b)```
+>将b转换为整数类型赋值给a
+### 3.2 while结构
+>```python
+>while condition:
+>	........
+>```
+>``` while list :```可同于判断列表是否为空
+### 3.3 删除特定值元素
+> ```python
+>  while a in list :
+> ......
+> ```
+## 4 函数
+### 4.0 函数结构
+>```python
+>def abc():
+>	.......
+>```
+### 4.1 关键字实参
+>```python
+>def abc(a,b):
+>	.....
+>abc(a=c,b=d)
+>```
+>在这种情况下不需要考虑顺序
+### 4.2 默认值
+>```python
+>def abc(a,b=d):
+>	......
+>abc(x)
+>```
+>此时a赋值x，b为默认值d，注意需要把a放在第一位
+### 4.3禁止函数修改列表
+> ```python
+> def abc(list)
+> 	.....
+> abc(list[:])
+> ```
+> 这种表示方法表示只能访问不能修改，传入的是list的副本
+### 4.4 传递任意数量的参数
+>```python
+>def abc(*a)
+>	.....//实际上a为一个列表类型，他的值由传入实参构成
+>```
+>a可以接受任意数量参数写入一个以a命名的元祖中
+>注意：使用任意数量形参需要把形参写到最后
+### 4.5 传递任意数量键值对参数
+>```python
+>def abc(**a)
+>	......//实际上a是一个字典型值，他的值有传入实参构成
+>abc(a='b',c='d')
+>```
+>
+### 4.6函数模块
+>```python
+>import a//a.function()
+>import a as b//b.function()
+>from a import function//function()
+>from a import *//function()
+>```
+## 5 类
+### 5.0 类的定义
+> ```python
+> class Dog():
+> 	def __init__(self,a,b):
+> 		self.x=a
+> 		self.y=b
+> 	def function(self)
+> 		......
+> 	............
+> ```
+ ### 5.1类中元素与方法的使用
+> ```python
+> class Fuck():
+> def __init__(self,a,b):
+>    self.name=a
+>    self.age=b
+> def show(self):
+>    print(self.name+"\n"+str(self.age)+"\n")
+> wo=Fuck("nmd",12)
+> print(wo.name)//使用元素
+> wo.show()//使用方法
+> ```
+### 5.2类中元素的修改
+> ```python
+> class Fuck():
+> def __init__(self):
+>    self.name=""
+> def change(self,name)
+>    self.name=name
+> wo=Fuck()
+> wo.changr("fuck")//通过方法修改
+> wo.name="fuck"//通过直接访问修改
+> ```
+### 5.3类的继承
