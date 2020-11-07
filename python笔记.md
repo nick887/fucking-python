@@ -1,3 +1,4 @@
+[toc]
 # python笔记
 ## 0. ZEN OF PYTHON
 >Beautiful is better than ugly.  
