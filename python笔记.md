@@ -383,5 +383,8 @@ del a['x']//删除键为'x'的键值对
 > 	a=[1,2,3,4]
 > 	json.dump(a,file)
 > ```
-## 8 代码测试
-* 
+* json的读取
+>```python
+>with open('a.txt') as file:
+>	a=json.load(file)
+>```
