@@ -36,6 +36,10 @@
 > ```str(a)```将其他类型转化为字符串类型
 * print字符串格式
 > ```print("string")```括号中字符串可以加双引号也可以加单引号
+* 将字符串按空格分开，返回一个单词列表
+>```a=string.split()```  
+* 字符串中指定单词计数
+>```a=string.count(word)```
 ### 1.1列表
 * 列表访问
 > 元素下标为0，1，2、、、
@@ -135,62 +139,6 @@
 > .................
 > ```
 
-## 3 字典
-* 字典的书写
-字典中的基本元素由键值对组成，形式如下：
-``` python
-a={'x':'value1','y'='value2',....}
-```
- * 访问字典
-类似与访问列表，下标改为键值
-```python
-a['x']
-```
-* 增加键值对
-通过赋值语句可以实现增加，若字典中存在则改变值  
-不存在则增加此键值对
-```python
-a['x']=b
-```
-* 删除键值对
-```python
-del a['x']//删除键为'x'的键值对
-```
-* 遍历字典
-  * 遍历字典元素
-  ```python
-  for i,j in a.items()//i为键，j为值
-  ```
-  * 遍历字典键
-  ```python
-  for i in a.keys()//注意此时的遍历以及将键值sorted
-  ```
-  * 遍历字典值
-  ```python
-  for i in a.values()
-  ```
-  * set()函数
-  当列表中的值重复的较多，而我们不需要这样的重复的无效数据时可以使用set(list)函数  
-  此函数通过列表输入生成一个集合类型，集合与列表类似，不同在于集合不含有重复元素
-  ```python
-  for i in set(a.values())
-  ```
-  * 嵌套字典
-   * 列表嵌套字典
-     ```python
-     [{},{},{},...]
-     ```
-   * 字典嵌套列表
-     ```python
-     {
-     a:[x,y,z,...],
-     ...........
-     }
-     ```
-   * 字典中有字典
-     ```python
-     {{},{},{},....}
-     ```
 
 
 ## 3 交互输入与while
@@ -294,3 +242,146 @@ del a['x']//删除键为'x'的键值对
 > wo.name="fuck"//通过直接访问修改
 > ```
 ### 5.3类的继承
+>```python
+>class Fuck():
+    def __init__(self,a,b):
+        self.name=a
+        self.age=b
+    def show(self):
+        print(self.name+"\n"+str(self.age)+"\n")
+class superFuck(Fuck):
+    def __init__(self,a,b):
+        super().__init__(a,b)//super()是一个特殊的方法，继承Fuck中所有属性
+    def show(self)
+    	.............//此语句重写父类show功能，将不考虑父类
+    ```
+### 5.4类的使用
+>```python
+>class abc():
+>	def __init__(self,name):
+>		self.name=name
+>	def x(self):
+>		print("fuck you")
+>class Fuck():
+>	def __init__(self,a,b):
+>  	self.name=a
+>  	self.age=b
+>	self.name1=abc()//类的属性包含了另一个类，通过这个属性可以访问另一个类的所有属性
+>a=Fuck(x,y)
+>a.name1.x()
+>```
+### 5.5 类的导入
+> 类的导入类似于函数的导入，函数名变为类名，其他规则相同
+## 6 字典
+* 字典的书写
+字典中的基本元素由键值对组成，形式如下：
+``` python
+a={'x':'value1','y'='value2',....}
+```
+ * 访问字典
+类似与访问列表，下标改为键值
+```python
+a['x']
+```
+* 增加键值对
+通过赋值语句可以实现增加，若字典中存在则改变值  
+不存在则增加此键值对
+```python
+a['x']=b
+```
+* 删除键值对
+```python
+del a['x']//删除键为'x'的键值对
+```
+* 遍历字典
+  * 遍历字典元素
+  ```python
+  for i,j in a.items()//i为键，j为值
+  ```
+  * 遍历字典键
+  ```python
+  for i in a.keys()//注意此时的遍历以及将键值sorted
+  ```
+  * 遍历字典值
+  ```python
+  for i in a.values()
+  ```
+  * set()函数
+  当列表中的值重复的较多，而我们不需要这样的重复的无效数据时可以使用set(list)函数  
+  此函数通过列表输入生成一个集合类型，集合与列表类似，不同在于集合不含有重复元素
+  ```python
+  for i in set(a.values())
+  ```
+  * 嵌套字典
+   * 列表嵌套字典
+     ```python
+     [{},{},{},...]
+     ```
+   * 字典嵌套列表
+     ```python
+     {
+     a:[x,y,z,...],
+     ...........
+     }
+     ```
+   * 字典中有字典
+     ```python
+     {{},{},{},....}
+     ```
+## 7 文件与异常
+### 7.1 打开文件
+>```python
+>with open('abc.txt') as file:
+>	content=file.read()
+>```
+这中结构的好处是可以随时关闭file防止文本文件丢失，也可以使用open(),close()访问
+### 7.2 逐行打印
+>```python
+>with open('abc.txt') as file:
+>	for i in file:
+>		print(i)
+>```
+### 7.3 with代码块外访问文件
+>```python
+>with open('abc.txt') as file:
+>	file1=file.readlines()
+>for i in file1:
+>	print(i)
+>```
+> 注意这段代码与.read()代码的区别是将txt文件每行作为一个元素储存到file1列表中，.read()是将所有字符串存储到一个变量中
+### 7.4 写入文件
+>```python
+>with opne('abc.txt','w') as file:
+>	file.write(text)//注意写入多行时需要在字符串末尾加'\n'
+>```
+>读取模式为‘r’，写入模式为‘w’，附加模式为‘a’，读取和写入模式为‘r+’，若无符号则默认为读取模式。若写入文件不存在直接创建。
+>‘w’模式会覆盖原内容
+### 7.5 try-except处理异常
+> ```python
+> try:
+> 	.....
+> except 异常情况:
+> 	......
+> else:
+>     .....
+> ```
+>
+>若try成功了继续执行else，否则执行except不执行else
+### 7.6 不显示异常信息
+> ```python
+> try:
+> 	.....
+> except 异常情况:
+> 	pass//这是重点
+> else:
+>     .....
+> ```
+### 7.7 json格式的使用
+* json的写入
+> ```python
+> with open('a.txt','w') as file:
+> 	a=[1,2,3,4]
+> 	json.dump(a,file)
+> ```
+## 8 代码测试
+* 
